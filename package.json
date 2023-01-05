@@ -5,17 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --respawn --transpile-only --cls --rs ./src/index.ts"
+    "start:dev": "ts-node-dev --respawn --transpile-only --cls --rs ./src/index.ts",
+    "remove_build": "rm -rf dist",
+    "build_file": "tsc",
+    "build": "npm run remove_build && npm run build_file"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/cors": "^2.8.12",
+    "@types/jsonwebtoken": "^9.0.0",
+    "@types/nodemailer": "^6.4.6",
+    "@types/password-hash": "^1.2.21",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.7.5",
+    "nodemailer": "^6.8.0",
+    "password-hash": "^1.2.2",
     "razorpay": "^2.8.4",
     "ts-node-dev": "^2.0.0"
   },

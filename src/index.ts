@@ -6,10 +6,12 @@ import 'dotenv/config'
 
 import userRouter from './routes/userRouter'
 import adminRouter from './routes/adminRouter'
+import doctorRouter from './routes/docterRouter'
 
 const app: Express = expres()
 
 app.use(expres.json())
+
 
 app.use(cors({
     origin: ['http://localhost:3000'],
@@ -25,12 +27,14 @@ connection((err) => {
     
 })
 
-app.use('/user', userRouter)
 app.use('/admin', adminRouter)
+app.use('/user', userRouter)
+app.use('/doctor', doctorRouter)
+app.use('/receptionist', doctorRouter)
 
-const PORT = process.env.PORT || 4000
+const PORT = 3001
 
-app.listen(PORT, () => {
-    console.log(`port running oi PORT ${PORT}`);
 
+app.listen(PORT, async() => {
+    console.log(`port running on PORT: ${PORT}`);
 })
